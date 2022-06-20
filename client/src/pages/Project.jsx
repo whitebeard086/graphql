@@ -1,7 +1,7 @@
 import { Link, useParams } from "react-router-dom";
 import { useQuery } from "@apollo/client";
 
-import { Spinner, ClientInfo } from "../components";
+import { Spinner, ClientInfo, DeleteProjectButton } from "../components";
 import { GET_PROJECT } from "../queries/projectQueries";
 
 const Project = () => {
@@ -28,6 +28,7 @@ const Project = () => {
           <h5 className="mt-3">Project Status</h5>
           <p className="lead">{data.project.status}</p>
           <ClientInfo client={data.project.client} />
+          <DeleteProjectButton projectId={data.project.id} />
         </div>
       )}
     </>
