@@ -24,23 +24,7 @@ app.use(
 );
 
 // Serve frontend
-// if (process.env.NODE_ENV === "production") {
-//   app.use(express.static(path.join(__dirname, "client/build")));
-
-//   app.get("*", (_, res) => {
-//     res.sendFile(path.join(__dirname, "../client/build/index.html"));
-//   });
-// } else {
-//   app.get("/", (req, res) => res.send("Please set environment to production"));
-// }
-
-// app.use(express.static("public"));
-
 app.use(express.static(path.resolve(__dirname, "../client/build")));
-
-// app.get("*", (req, res) => {
-//   res.sendFile(path.resolve(__dirname, "public", "index.html"));
-// });
 
 app.get("*", (req, res) => {
   res.sendFile(path.resolve(__dirname, "../client/build", "index.html"));
